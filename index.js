@@ -37,7 +37,9 @@ inquirer
 
   const userAnswers = (ans) => {
     console.log(ans);
-    fs.writeFile("input.html", 
+    const lower = ans.name
+    const lowerCase = lower.toLowerCase() 
+    fs.writeFile(`./output/${lowerCase}.html`, 
     
     `<!DOCTYPE html>
     <html lang="en">
@@ -45,6 +47,7 @@ inquirer
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/style.css">
         <title>HTML from node.js</title>
     </head>
     <body>
@@ -58,5 +61,8 @@ inquirer
     
     (err) =>
     err ? console.error(err) : console.log('Success!')
-  ); 
+  )
+  
+//   fs.writeFile("style.css", )
+  ; 
   }
